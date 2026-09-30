@@ -8,3 +8,9 @@
     <p>Halaman sederhana Data jadwal.</p>
 </body>
 </html>
+@extends('layouts.app')
+@section('title', 'Jadwal')
+@section('content')
+ <h1>Data Jadwal</h1>
+ <p>Selamat datang di Sistem Informasi Klinik.</p>
+@endsection

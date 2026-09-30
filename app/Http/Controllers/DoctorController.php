@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class DoctorController extends Controller
 {
     public function index()
     {
-        $judul = 'Data Dokter';
-        return view('dokter.index', compact('judul'));
+        $doctors = [
+            ['nama' => 'dr. Andi',  'spesialisasi' => 'Umum',           'status' => 'aktif'],
+            ['nama' => 'dr. Budi',  'spesialisasi' => 'Anak',           'status' => 'aktif'],
+            ['nama' => 'dr. Citra', 'spesialisasi' => 'Gigi',           'status' => 'cuti'],
+            ['nama' => 'dr. Dewi',  'spesialisasi' => 'Kandungan',      'status' => 'aktif'],
+            ['nama' => 'dr. Eko',   'spesialisasi' => 'Penyakit Dalam', 'status' => 'cuti'],
+        ];
+
+        return view('dokter.index', compact('doctors'));
     }
 }
