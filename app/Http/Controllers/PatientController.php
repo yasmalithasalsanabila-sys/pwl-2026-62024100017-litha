@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
+
 class PatientController extends Controller
 {
     public function index()
     {
-        $patients = [
-            ['id' => 1, 'nama' => 'Melati', 'alamat' => 'Kudus'],
-            ['id' => 2, 'nama' => 'Mawar',  'alamat' => 'Jepara'],
-            ['id' => 3, 'nama' => 'Lily',   'alamat' => 'Pati'],
-        ];
+        $patients = Patient::all();
 
         return view('pasien.index', compact('patients'));
     }
