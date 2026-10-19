@@ -13,8 +13,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/pasien', [PatientController::class, 'index'])->name('pasien.index');
-Route::get('/pasien/{id}', [PatientController::class, 'show']);
+Route::resource('pasien', PatientController::class);
 
 Route::get('/dokter', [DoctorController::class, 'index'])->name('dokter.index');
 
