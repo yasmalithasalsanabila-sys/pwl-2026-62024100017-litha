@@ -15,7 +15,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::resource('pasien', PatientController::class);
 
-Route::get('/dokter', [DoctorController::class, 'index'])->name('dokter.index');
+Route::resource('dokter', DoctorController::class)
+    ->parameters(['dokter' => 'doctor'])
+    ->except(['show']);
 
 Route::resource('poli', PoliController::class);
 

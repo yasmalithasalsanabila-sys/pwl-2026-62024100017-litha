@@ -12,12 +12,12 @@ class Doctor extends Model
         'specialization',
         'phone',
         'is_active',
+        'poli_id',      // <-- baru
     ];
 
-    protected function casts(): array
+    // <-- baru: satu Doctor dimiliki oleh satu Poli
+    public function poli()
     {
-        return [
-            'is_active' => 'boolean',
-        ];
+        return $this->belongsTo(Poli::class);
     }
 }

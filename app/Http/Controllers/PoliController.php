@@ -37,9 +37,11 @@ class PoliController extends Controller
     }
 
     public function show(Poli $poli)
-    {
-        return redirect()->route('poli.edit', $poli);
-    }
+{
+    $poli->load('doctors');
+
+    return view('poli.show', compact('poli'));
+}
 
     public function edit(Poli $poli)
     {

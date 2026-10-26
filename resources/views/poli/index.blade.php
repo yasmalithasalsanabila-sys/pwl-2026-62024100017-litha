@@ -33,6 +33,8 @@
                     <td>{{ $poli->description ?? '-' }}</td>
                     <td>{{ $poli->is_active ? 'Aktif' : 'Nonaktif' }}</td>
                     <td>
+                        <a href="{{ route('poli.show', $poli->id) }}">Detail</a>
+
                         <a href="{{ route('poli.edit', $poli->id) }}">Edit</a>
 
                         <form action="{{ route('poli.destroy', $poli->id) }}"
